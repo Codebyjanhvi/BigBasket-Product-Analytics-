@@ -1,5 +1,5 @@
-BigBasket Product Analytics and Pricing Dashboard
-End-to-End Data Analytics Project using Real Data
+                                                  BigBasket Product Analytics and Pricing Dashboard
+
 ________________________________________
 Project Overview
 This project focuses on end-to-end product and pricing analytics using a real product catalog dataset from the BigBasket online grocery platform.

@@ -1,13 +1,13 @@
-                                                  BigBasket Product Analytics and Pricing Dashboard
+                                                  **BigBasket Product Analytics and Pricing Dashboard**
 
 ________________________________________
-Project Overview
+                                                                    Project Overview
 This project focuses on end-to-end product and pricing analytics using a real product catalog dataset from the BigBasket online grocery platform.
 The objective is to understand how BigBasket’s product assortment is structured and how pricing, discounts, brands, and categories behave across the catalog. An interactive Power BI dashboard was built to present business insights in a clear and decision-oriented manner.
 The project follows the complete analytics lifecycle:
 raw data → cleaning → feature engineering → exploratory data analysis → business insights → dashboarding.
-________________________________________
-Business Problem
+
+                                                                    Business Problem
 An online grocery company like BigBasket lacks clear visibility into:
 •	Which categories and sub-categories dominate the product catalog
 •	How prices vary across categories and brands
@@ -15,8 +15,8 @@ An online grocery company like BigBasket lacks clear visibility into:
 •	How aggressive discounting is across different categories
 •	Which categories contribute the most to revenue potential
 Most pricing and assortment decisions are made without structured insights from historical product data.
-________________________________________
-Project Objectives
+
+                                                                     Project Objectives
 The key objectives of this project are:
 •	Analyze product distribution across categories and sub-categories
 •	Study sale price variation and price outliers
@@ -25,7 +25,9 @@ The key objectives of this project are:
 •	Estimate category-wise revenue potential
 •	Generate actionable insights for pricing and assortment optimization
 ________________________________________
-Dataset
+                                                                                Dataset
+
+                                                                                
 Source: Kaggle – BigBasket Indian Grocery Dataset
 The dataset contains product-level data scraped from the BigBasket website.
 Dataset size:
@@ -41,32 +43,40 @@ sale_price	Discounted selling price
 market_price	Original market price
 rating	Customer rating
 description	Product description
-________________________________________
-Tools and Technologies Used
-•	Python for data cleaning, feature engineering, and exploratory data analysis
+                                                                        Tools and Technologies Used
+
+                                                                        
+•	Python for data cleaning, feature engineering, and exploratory data analysi
 •	Pandas and NumPy for data manipulation
 •	Matplotlib and Seaborn for visual analysis
 •	Power BI for interactive dashboard creation
 •	Jupyter Notebook / Google Colab as the development environment
-________________________________________
-Project Workflow
+
+                                                                            Project Workflow
+
+
 1. Data Ingestion
 The CSV dataset was loaded into Pandas and examined for:
+
 •	Data types
 •	Number of records
 •	Missing values
 •	Overall structure using df.info() and df.head()
-________________________________________
-2. Data Cleaning and Preprocessing
+
+
+3. Data Cleaning and Preprocessing
 The following preprocessing steps were performed:
+
 •	Dropped the unnecessary index column
 •	Removed rows with missing product or brand values
 •	Imputed missing rating values using the median rating
 •	Filled missing description values with a placeholder string
 •	Standardized column names for consistency
-________________________________________
-3. Feature Engineering
+
+
+4. Feature Engineering
 New analytical columns were created to support deeper analysis:
+
 •	discount_pct
 = (market_price − sale_price) / market_price × 100
 •	price_segment
@@ -76,25 +86,30 @@ Binary flag for products with discount percentage greater than or equal to 30 pe
 •	revenue_potential
 = sale_price × 1
 Used as a pricing proxy per product
-________________________________________
+
 4. Exploratory Data Analysis
 The following analyses were performed:
+
 •	Category-wise and sub-category-wise product counts
 •	Sale price distribution and outlier detection
 •	Category-wise average sale price
 •	Discount percentage distribution
 •	Price segmentation across products
-________________________________________
+
 5. Business Insights Generated
 Key insights derived from the analysis include:
+
 •	Certain categories such as Fruits and Vegetables and Staples dominate the product catalog.
 •	Premium brands show significantly higher average sale prices compared to mass-market brands.
 •	A small subset of products contributes disproportionately to overall revenue potential.
 •	Several categories exhibit aggressive discounting behavior with discount percentages above 30 percent.
 •	Budget-priced products form the largest portion of the catalog.
-________________________________________
-Dashboard Overview (Power BI)
+
+                                                                Dashboard Overview (Power BI)
+
+                                                                
 An interactive Power BI dashboard was built with the following components:
+
 •	KPI cards for:
 o	Total number of products
 o	Average sale price
@@ -112,17 +127,19 @@ o	Category
 o	Sub-category
 o	Brand
 o	Price segment
-________________________________________
+
 Key Business Use Cases
 This dashboard can be used by business teams to:
+
 •	Optimize pricing strategies across categories and brands
 •	Identify over-discounted products
 •	Improve assortment planning
 •	Detect premium and budget brand positioning
 •	Prioritize high-revenue-potential categories
-________________________________________
+
 Future Enhancements
 Possible extensions of this project include:
+
 •	Integrating sales volume data to calculate actual revenue
 •	Time-series analysis using historical pricing data
 •	Customer segmentation using ratings and reviews

@@ -1,70 +1,37 @@
-BigBasket Product Analytics & Pricing Dashboard
-
- End-to-End Data Analytics Project
-
-📌 Project Overview
-
-This project performs end-to-end product and pricing analytics using real product catalog data from the BigBasket online grocery platform.
-
-The goal of this project is to help business stakeholders understand:
-
-Product catalog composition
-
-Category and sub-category distribution
-
-Brand presence and pricing strategy
-
-Discount patterns and promotional intensity
-
-Revenue potential by category
-
-Premium vs budget product positioning
-
-The project also includes a Power BI dashboard for interactive business reporting.
-
+BigBasket Product Analytics and Pricing Dashboard
+End-to-End Data Analytics Project using Real Data
+________________________________________
+Project Overview
+This project focuses on end-to-end product and pricing analytics using a real product catalog dataset from the BigBasket online grocery platform.
+The objective is to understand how BigBasket’s product assortment is structured and how pricing, discounts, brands, and categories behave across the catalog. An interactive Power BI dashboard was built to present business insights in a clear and decision-oriented manner.
+The project follows the complete analytics lifecycle:
+raw data → cleaning → feature engineering → exploratory data analysis → business insights → dashboarding.
+________________________________________
 Business Problem
-
-An online grocery retailer like BigBasket lacks clear visibility into:
-
-Which categories and sub-categories dominate the product catalog
-
-How prices vary across categories and brands
-
-Which brands are positioned as premium vs budget
-
-How aggressive discounting is being applied
-
-Which categories drive the highest revenue potential
-
-Decisions on pricing, promotions, and assortment planning are often made without structured data insights.
-
-🎯 Business Objectives
-
-Analyze product distribution across categories and sub-categories
-
-Study price variation and outliers
-
-Identify premium vs budget product segments
-
-Analyze discount behavior and promotional strategies
-
-Estimate category-wise revenue potential
-
-Generate insights for pricing and assortment optimization
-
-📊 Dataset
-
+An online grocery company like BigBasket lacks clear visibility into:
+•	Which categories and sub-categories dominate the product catalog
+•	How prices vary across categories and brands
+•	Which brands are positioned as premium versus budget
+•	How aggressive discounting is across different categories
+•	Which categories contribute the most to revenue potential
+Most pricing and assortment decisions are made without structured insights from historical product data.
+________________________________________
+Project Objectives
+The key objectives of this project are:
+•	Analyze product distribution across categories and sub-categories
+•	Study sale price variation and price outliers
+•	Identify premium and budget product segments
+•	Analyze discount behavior and promotional strategies
+•	Estimate category-wise revenue potential
+•	Generate actionable insights for pricing and assortment optimization
+________________________________________
+Dataset
 Source: Kaggle – BigBasket Indian Grocery Dataset
-🔗 https://www.kaggle.com/code/ridamahmood005/indian-grocery-supermarket-big-basket-eda/input
-
-Dataset Size:
-
-27,555 products
-
-10 original columns
-
-Key Columns Used:
-
+The dataset contains product-level data scraped from the BigBasket website.
+Dataset size:
+•	27,555 product records
+•	10 original columns
+Key columns used:
 Column Name	Description
 product	Product name
 category	Product category
@@ -74,123 +41,90 @@ sale_price	Discounted selling price
 market_price	Original market price
 rating	Customer rating
 description	Product description
-🛠 Tools & Technologies
+________________________________________
+Tools and Technologies Used
+•	Python for data cleaning, feature engineering, and exploratory data analysis
+•	Pandas and NumPy for data manipulation
+•	Matplotlib and Seaborn for visual analysis
+•	Power BI for interactive dashboard creation
+•	Jupyter Notebook / Google Colab as the development environment
+________________________________________
+Project Workflow
+1. Data Ingestion
+The CSV dataset was loaded into Pandas and examined for:
+•	Data types
+•	Number of records
+•	Missing values
+•	Overall structure using df.info() and df.head()
+________________________________________
+2. Data Cleaning and Preprocessing
+The following preprocessing steps were performed:
+•	Dropped the unnecessary index column
+•	Removed rows with missing product or brand values
+•	Imputed missing rating values using the median rating
+•	Filled missing description values with a placeholder string
+•	Standardized column names for consistency
+________________________________________
+3. Feature Engineering
+New analytical columns were created to support deeper analysis:
+•	discount_pct
+= (market_price − sale_price) / market_price × 100
+•	price_segment
+Categorized into Very Low, Low, Medium, High, and Premium based on sale price ranges
+•	high_discount_flag
+Binary flag for products with discount percentage greater than or equal to 30 percent
+•	revenue_potential
+= sale_price × 1
+Used as a pricing proxy per product
+________________________________________
+4. Exploratory Data Analysis
+The following analyses were performed:
+•	Category-wise and sub-category-wise product counts
+•	Sale price distribution and outlier detection
+•	Category-wise average sale price
+•	Discount percentage distribution
+•	Price segmentation across products
+________________________________________
+5. Business Insights Generated
+Key insights derived from the analysis include:
+•	Certain categories such as Fruits and Vegetables and Staples dominate the product catalog.
+•	Premium brands show significantly higher average sale prices compared to mass-market brands.
+•	A small subset of products contributes disproportionately to overall revenue potential.
+•	Several categories exhibit aggressive discounting behavior with discount percentages above 30 percent.
+•	Budget-priced products form the largest portion of the catalog.
+________________________________________
+Dashboard Overview (Power BI)
+An interactive Power BI dashboard was built with the following components:
+•	KPI cards for:
+o	Total number of products
+o	Average sale price
+o	Average discount percentage
+o	Total revenue potential
+•	Visuals for:
+o	Category-wise product distribution
+o	Brand-wise product counts
+o	Category-wise revenue potential
+o	Price distribution histogram
+o	Top 10 most expensive products
+o	Top 10 cheapest products
+•	Filters and slicers for:
+o	Category
+o	Sub-category
+o	Brand
+o	Price segment
+________________________________________
+Key Business Use Cases
+This dashboard can be used by business teams to:
+•	Optimize pricing strategies across categories and brands
+•	Identify over-discounted products
+•	Improve assortment planning
+•	Detect premium and budget brand positioning
+•	Prioritize high-revenue-potential categories
+________________________________________
+Future Enhancements
+Possible extensions of this project include:
+•	Integrating sales volume data to calculate actual revenue
+•	Time-series analysis using historical pricing data
+•	Customer segmentation using ratings and reviews
+•	Machine learning models for price and demand forecasting
 
-Python – Data cleaning, feature engineering, EDA
-
-Pandas, NumPy – Data manipulation
-
-Matplotlib, Seaborn – Data visualization
-
-Power BI – Interactive dashboard
-
-Jupyter / Google Colab – Notebook environment
-
-🔄 Project Workflow
-1️⃣ Data Ingestion
-
-Loaded CSV dataset into Pandas
-
-Checked schema, data types, and missing values
-
-2️⃣ Data Cleaning & Preprocessing
-
-Removed unnecessary index column
-
-Dropped rows with missing product or brand
-
-Imputed missing ratings using median
-
-Filled missing descriptions with placeholder values
-
-Standardized column names
-
-3️⃣ Feature Engineering
-
-Created discount_pct using market price and sale price
-
-Created price_segment (Very Low, Low, Medium, High, Premium)
-
-Created high_discount_flag (≥ 30% discount)
-
-Created revenue_potential as a pricing proxy
-
-4️⃣ Exploratory Data Analysis (EDA)
-
-Category-wise and sub-category-wise product distribution
-
-Sale price distribution
-
-Category-wise average price
-
-Discount percentage distribution
-
-Premium vs budget product segmentation
-
-5️⃣ Advanced Product & Brand Analytics
-
-Brand-wise product count
-
-Brand-wise average sale price
-
-Top 10 most expensive products
-
-Top 10 cheapest products
-
-High-discount product analysis
-
-Category-wise revenue potential
-
-6️⃣ Business Insights
-
-A small number of categories contribute the majority of revenue potential
-
-Clear premium and budget brand positioning exists
-
-Price distribution is heavily right-skewed
-
-High-discount products are concentrated in specific categories
-
-Most products fall into low to medium price segments
-
-7️⃣ Business Recommendations
-
-Focus promotions on high-revenue categories
-
-Avoid deep discounting on premium brands
-
-Rationalize low-performing SKUs
-
-Promote budget and mid-range products
-
-Use category-level discount strategies
-
-📈 Power BI Dashboard
-
-The dashboard provides interactive views for:
-
-Total products
-
-Average sale price
-
-Total revenue potential
-
-Category-wise product count
-
-Brand-wise product count
-
-Category-wise revenue potential
-
-Discount distribution
-
-Price segmentation
-
-📌 Key Business Impact
-
-Identified dominant product categories and brands
-
-Revealed premium vs budget product positioning
-
-Highlighted aggressive discounting patterns
-
-Estimated revenue potential by category

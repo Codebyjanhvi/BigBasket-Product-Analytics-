@@ -1,13 +1,13 @@
-                                                  **BigBasket Product Analytics and Pricing Dashboard**
+            **BigBasket Product Analytics and Pricing Dashboard**
 
-________________________________________
-                                                                    Project Overview
+
+               Project Overview
 This project focuses on end-to-end product and pricing analytics using a real product catalog dataset from the BigBasket online grocery platform.
 The objective is to understand how BigBasket’s product assortment is structured and how pricing, discounts, brands, and categories behave across the catalog. An interactive Power BI dashboard was built to present business insights in a clear and decision-oriented manner.
 The project follows the complete analytics lifecycle:
 raw data → cleaning → feature engineering → exploratory data analysis → business insights → dashboarding.
 
-                                                                    Business Problem
+                Business Problem
 An online grocery company like BigBasket lacks clear visibility into:
 •	Which categories and sub-categories dominate the product catalog
 •	How prices vary across categories and brands
@@ -16,7 +16,7 @@ An online grocery company like BigBasket lacks clear visibility into:
 •	Which categories contribute the most to revenue potential
 Most pricing and assortment decisions are made without structured insights from historical product data.
 
-                                                                     Project Objectives
+          roject Objectives
 The key objectives of this project are:
 •	Analyze product distribution across categories and sub-categories
 •	Study sale price variation and price outliers
@@ -24,8 +24,8 @@ The key objectives of this project are:
 •	Analyze discount behavior and promotional strategies
 •	Estimate category-wise revenue potential
 •	Generate actionable insights for pricing and assortment optimization
-________________________________________
-                                                                                Dataset
+
+               Dataset
 
                                                                                 
 Source: Kaggle – BigBasket Indian Grocery Dataset
@@ -43,7 +43,8 @@ sale_price	Discounted selling price
 market_price	Original market price
 rating	Customer rating
 description	Product description
-                                                                        Tools and Technologies Used
+      
+         Tools and Technologies Used
 
                                                                         
 •	Python for data cleaning, feature engineering, and exploratory data analysi
@@ -52,7 +53,7 @@ description	Product description
 •	Power BI for interactive dashboard creation
 •	Jupyter Notebook / Google Colab as the development environment
 
-                                                                            Project Workflow
+                   Project Workflow
 
 
 1. Data Ingestion
@@ -105,7 +106,7 @@ Key insights derived from the analysis include:
 •	Several categories exhibit aggressive discounting behavior with discount percentages above 30 percent.
 •	Budget-priced products form the largest portion of the catalog.
 
-                                                                Dashboard Overview (Power BI)
+                 Dashboard Overview (Power BI)
 
                                                                 
 An interactive Power BI dashboard was built with the following components:
